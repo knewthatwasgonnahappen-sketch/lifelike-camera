@@ -133,6 +133,16 @@ public final class LifelikeCameraClient {
             crouching,
             weaponActive,
             speedIsEnhanced);
+        
+        pose.set(
+        generatedPose.positionX,
+        generatedPose.positionY,
+        generatedPose.positionZ,
+        generatedPose.pitch,
+        generatedPose.yaw,
+        generatedPose.roll,
+        generatedPose.fovOffset,
+        generatedPose.movementWeight);
 
         double adsWeight = 1.0D - TaczAimingBridge.getProgress(player, partialTick)
                 * (1.0D - CameraConfig.taczBlend());

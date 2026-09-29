@@ -3,6 +3,7 @@ plugins {
     id "idea"
     id "maven-publish"
     id "net.minecraftforge.gradle" version "[6.0,6.2)"
+    id "org.spongepowered.mixin" version "0.7.+"
 }
 
 version = project.mod_version
@@ -57,6 +58,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
 
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.118")
+
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 tasks.named("processResources", ProcessResources).configure {

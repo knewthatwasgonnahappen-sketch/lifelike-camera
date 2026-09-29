@@ -18,7 +18,7 @@ public final class RealWalkController {
 
     private static final KeyMapping REAL_WALK_KEY = new KeyMapping(
             "key.lifelikecamera.real_walk",
-            IKeyConflictContext.IN_GAME,
+            KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_LEFT_ALT,
             "key.categories.lifelikecamera");

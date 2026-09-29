@@ -119,21 +119,20 @@ public final class LifelikeCameraClient {
         boolean speedIsEnhanced = player.isSprinting() || realWalk;
         boolean crouching = player.isCrouching();
         boolean weaponActive = player.isUsingItem() || crouching;
-
-        camera.update(
-                dt,
-                localX,
-                localZ,
-                accelX,
-                accelZ,
-                grounded,
-                delta.y * PLAYER_SPEED_TO_MPS,
-                landingFallDistance,
-                selectedSpeed,
-                yawRate,
-                crouching,
-                weaponActive,
-                speedIsEnhanced);
+        CameraPose generatedPose = camera.update(
+            dt,
+            localX,
+            localZ,
+            accelX,
+            accelZ,
+            grounded,
+            delta.y * PLAYER_SPEED_TO_MPS,
+            landingFallDistance,
+            selectedSpeed,
+            yawRate,
+            crouching,
+            weaponActive,
+            speedIsEnhanced);
 
         double adsWeight = 1.0D - TaczAimingBridge.getProgress(player, partialTick)
                 * (1.0D - CameraConfig.taczBlend());
